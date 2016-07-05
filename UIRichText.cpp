@@ -213,19 +213,19 @@ void RichText::formatText()
 						if (FileUtils::getInstance()->isFileExist(elmtText->_fontName))
 						{
 							elementRenderer = Label::createWithTTF(elmtText->_text.c_str(), elmtText->_fontName, elmtText->_fontSize);
-							if (elmtText->_labelEffect == cocos2d::LabelEffect::SHADOW)
-							{
-								((Label*)elementRenderer)->enableShadow(elmtText->_effectColor);
-							}
-							else if (elmtText->_labelEffect == cocos2d::LabelEffect::OUTLINE)
-							{
-								((Label*)elementRenderer)->enableOutline(elmtText->_effectColor, elmtText->_outlineSize);
-							}
                         }
                         else
                         {
                             elementRenderer = Label::createWithSystemFont(elmtText->_text.c_str(), elmtText->_fontName, elmtText->_fontSize);
                         }
+						if (elmtText->_labelEffect == cocos2d::LabelEffect::SHADOW)
+						{
+							((Label*)elementRenderer)->enableShadow(elmtText->_effectColor);
+						}
+						else if (elmtText->_labelEffect == cocos2d::LabelEffect::OUTLINE)
+						{
+							((Label*)elementRenderer)->enableOutline(elmtText->_effectColor, elmtText->_outlineSize);
+						}
                         break;
                     }
                     case RichElement::Type::IMAGE:
@@ -316,19 +316,20 @@ void RichText::handleTextRenderer(const std::string& text, const std::string& fo
     if (fileExist)
     {
         textRenderer = Label::createWithTTF(text, fontName, fontSize);
-		if (effect == cocos2d::LabelEffect::SHADOW)
-		{
-			textRenderer->enableShadow(effectColor);
-		}
-		else if (effect == cocos2d::LabelEffect::OUTLINE)
-		{
-			textRenderer->enableOutline(effectColor, outlineSize);
-		}
     } 
     else
     {
         textRenderer = Label::createWithSystemFont(text, fontName, fontSize);
     }
+	if (effect == cocos2d::LabelEffect::SHADOW)
+	{
+		textRenderer->enableShadow(effectColor);
+	}
+	else if (effect == cocos2d::LabelEffect::OUTLINE)
+	{
+		textRenderer->enableOutline(effectColor, outlineSize);
+	}
+
     float textRendererWidth = textRenderer->getContentSize().width;
     _leftSpaceWidth -= textRendererWidth;
     if (_leftSpaceWidth < 0.0f)
@@ -385,19 +386,21 @@ void RichText::handleTextRenderer(const std::string& text, const std::string& fo
             if (fileExist)
             {
                 leftRenderer = Label::createWithTTF(Helper::getSubStringOfUTF8String(leftWords, 0, leftLength), fontName, fontSize);
-				if (effect == cocos2d::LabelEffect::SHADOW)
-				{
-					leftRenderer->enableShadow(effectColor);
-				}
-				else if (effect == cocos2d::LabelEffect::OUTLINE)
-				{
-					leftRenderer->enableOutline(effectColor, outlineSize);
-				}
             }
             else
             {
                 leftRenderer = Label::createWithSystemFont(Helper::getSubStringOfUTF8String(leftWords, 0, leftLength), fontName, fontSize);
             }
+
+			if (effect == cocos2d::LabelEffect::SHADOW)
+			{
+				leftRenderer->enableShadow(effectColor);
+			}
+			else if (effect == cocos2d::LabelEffect::OUTLINE)
+			{
+				leftRenderer->enableOutline(effectColor, outlineSize);
+			}
+
             if (leftRenderer)
             {
                 leftRenderer->setTextColor(Color4B(color));
