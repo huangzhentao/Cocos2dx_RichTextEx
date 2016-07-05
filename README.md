@@ -13,7 +13,7 @@ RichTextEX支持阴影和描边的版本(基于Cocos2d-x v3.10)
 	txt:setContentSize(200, 400)
 	addChild(txt)
 	
-	txt:setText("<#333>你\t好<#800>\n\t&lt;世界&gt;<img temp.png><img_50*50 temp.png><33bad_fmt<#555><64>Big<#077><18>SMALL<")
+	txt:setText("<font fonts/fzlbjt.ttf><64><#FFF><effect shadow><@F00>A ABB<img temp.png>哦<img_50*50 temp.png>B<#00F>&lt;C\tC&gt;<@0F0><64>D\nD<18>EE<")
 	
 	如果字符串是由用户输入的话，建议调用RichTextEx.htmlEncode("<ABC>")将用户输入内容编码一下，以避免用户输入关键字符导致无法预知的错误
 	在生成字符串之前会自动调用RichTextEx.htmlDecode,如果你自定义了字符串创建，请记得调用这个，以解码
