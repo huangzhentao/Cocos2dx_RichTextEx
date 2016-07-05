@@ -1,8 +1,20 @@
-# Cocos2dx_RichTextEx
+# RichTextEX支持阴影和描边的版本(基于Cocos2d-x v3.10)
 
-RichTextEX支持阴影和描边的版本(基于Cocos2d-x v3.10)
+原版本github地址：https://github.com/ArcherPeng/RichTextEXWithUnderLineAndOutLine
 
-效果图：
+原版本基于的cocos2dx版本未知，当前版本是基于cocos2dx v3.10
+
+去除：
+1、去除了原版本的下划线功能
+增加：
+1、字体描边
+2、字体阴影
+修正：
+1、v3.10版本下\n换行不正确问题，换行需设置ContentSize
+
+
+下面演示代码的效果图：
+![Aaron Swartz](https://github.com/huangzhentao/Cocos2dx_RichTextEx/raw/master/example.png)
 
 一个简单的富文本 Label，用法
 	
@@ -14,7 +26,7 @@ RichTextEX支持阴影和描边的版本(基于Cocos2d-x v3.10)
 	addChild(txt)
 	
 	txt:setText("<font fonts/fzlbjt.ttf><64><#FFF><effect shadow><@F00>A ABB<img temp.png>哦<img_50*50 temp.png>B<#00F>&lt;C\tC&gt;<@0F0><64>D\nD<18>EE<")
-	
+
 	如果字符串是由用户输入的话，建议调用RichTextEx.htmlEncode("<ABC>")将用户输入内容编码一下，以避免用户输入关键字符导致无法预知的错误
 	在生成字符串之前会自动调用RichTextEx.htmlDecode,如果你自定义了字符串创建，请记得调用这个，以解码
 	
