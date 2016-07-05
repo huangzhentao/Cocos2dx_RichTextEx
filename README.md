@@ -4,13 +4,13 @@
 
 原版本基于的cocos2dx版本未知，当前版本是基于cocos2dx v3.10
 
-去除: ＜/br＞
-1.去除了原版本的下划线功能＜/br＞
-增加:＜/br＞
-1.字体描边＜/br＞
-2.字体阴影＜/br＞
-修正:＜/br＞
-1.v3.10版本下\n换行不正确问题，换行需设置ContentSize＜/br＞
+去除:  
+1.去除了原版本的下划线功能  
+增加:   
+1.字体描边   
+2.字体阴影   
+修正:   
+1.v3.10版本下\n换行不正确问题，换行需设置ContentSize  
 
 下面演示代码的效果图：
 ![Aaron Swartz](https://github.com/huangzhentao/Cocos2dx_RichTextEx/raw/master/example.png)
