@@ -180,17 +180,17 @@ function _M.defaultCb(text, sender)
 	local SCALE		= "scale "
 	
 	if str_sub(text, 1, #BLINK) == BLINK then
-		local lbl = ccui.Text:create(self:htmlDecode(str_sub(text, #BLINK + 1)), "", sender._fontSize)
+		local lbl = ccui.Text:create(_M.htmlDecode(str_sub(text, #BLINK + 1)), "", sender._fontSize)
 		lbl:setTextColor(c3b_to_c4b(sender._textColor))
 		lbl:runAction(cc.RepeatForever:create(cc.Blink:create(10, 10)))
 		return lbl
 	elseif str_sub(text, 1, #ROTATE) == ROTATE then
-		local lbl = ccui.Text:create(self:htmlDecode(str_sub(text, #ROTATE + 1)), "", sender._fontSize)
+		local lbl = ccui.Text:create(_M.htmlDecode(str_sub(text, #ROTATE + 1)), "", sender._fontSize)
 		lbl:setTextColor(c3b_to_c4b(sender._textColor))
 		lbl:runAction(cc.RepeatForever:create(cc.RotateBy:create(0.1, 5)))
 		return lbl
 	elseif str_sub(text, 1, #SCALE) == SCALE then
-		local lbl = ccui.Text:create(self:htmlDecode(str_sub(text, #SCALE + 1)), "", sender._fontSize)
+		local lbl = ccui.Text:create(_M.htmlDecode(str_sub(text, #SCALE + 1)), "", sender._fontSize)
 		lbl:setTextColor(c3b_to_c4b(sender._textColor))
 		lbl:runAction(cc.RepeatForever:create(cc.Sequence:create(cc.ScaleTo:create(1.0, 0.1), cc.ScaleTo:create(1.0, 1.0))))
 		return lbl
