@@ -92,7 +92,7 @@ ArcherPeng FixedLog:
 --/////////////////////////////////////////////////////////////////////////////
 
 local _M = class("RichTextEx", function(...)
-		return ccui.RichText:create(...)
+		return ccui.RichText:create()
 
 end)
 
