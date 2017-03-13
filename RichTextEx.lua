@@ -272,7 +272,7 @@ function _M:setText(text, callback)
 	local p, i, b, c = 1, 1, false
 	local str, len, chr, obj = "", #text
 	
-	while i <= len + 1 do
+	while i <= len do
 		c = str_byte(text, i)
 		if c == P_BEG then	-- <
 			if (not b) and (i > p) then
@@ -285,7 +285,7 @@ function _M:setText(text, callback)
 			
 			b = true; p = i + 1; i = p
 			
-			while i < len do
+			while i < len + 1 do
 				if str_byte(text, i) == P_END then	-- >
 					b = false
 					if i > p then
